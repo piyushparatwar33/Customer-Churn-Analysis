@@ -1,67 +1,114 @@
-# Customer Churn Analysis | PostgreSQL & Python
+# 📊 Customer Churn Analysis | PostgreSQL & Python
 
-## Project Overview
-This project analyzes telecom customer churn to understand retention patterns and identify customer groups with higher churn rates. It uses PostgreSQL queries for business analysis and Python (Pandas, Matplotlib) for cleaning, KPI calculation, summaries, and charts.
+## 📌 Project Overview
 
-## Dataset
-- File: `Dataset/Customer-Churn.csv`
-- Rows: 7,043
-- Columns: 21
-- Target field: `Churn` (`Yes` / `No`)
+This project analyzes telecom customer data to identify churn patterns, understand customer retention, and discover factors associated with customer attrition. PostgreSQL is used for SQL-based analysis, while Python, Pandas, and Matplotlib are used for data cleaning, KPI calculation, and visualization.
 
-## Tools
-- PostgreSQL
-- Python 3
-- Pandas
-- Matplotlib
-- Visual Studio Code
+## 🎯 Business Objectives
 
-## Questions Answered
-1. How many customers are in the dataset?
-2. What percentage of customers churned?
-3. Which contract types have higher churn rates?
-4. How does churn vary by payment method?
-5. How does churn vary by customer tenure?
-6. How do average monthly charges differ by churn status?
+* Calculate the overall customer churn rate.
+* Compare churn across contract types.
+* Analyze churn patterns by customer tenure.
+* Examine payment methods and monthly charges.
+* Provide data-driven insights to support customer retention.
 
-## Repository Structure
+## 🛠️ Tech Stack
+
+* **SQL:** PostgreSQL
+* **Programming:** Python
+* **Libraries:** Pandas, Matplotlib
+* **Tools:** Visual Studio Code, GitHub
+
+## 📂 Dataset
+
+* **Records:** 7,043 customers
+* **Features:** 21 columns
+* **Target:** `Churn` (Yes/No)
+
+## 📈 Key Performance Indicators
+
+| KPI                | Result |
+| ------------------ | -----: |
+| Total Customers    |  7,043 |
+| Churned Customers  |  1,869 |
+| Retained Customers |  5,174 |
+| Overall Churn Rate | 26.54% |
+
+## 🔍 Key Findings
+
+* **Overall churn:** 26.54% of customers in the dataset have churned.
+* **Month-to-month contracts:** Churn rate is 42.71%.
+* **One-year contracts:** Churn rate is 11.27%.
+* **Two-year contracts:** Churn rate is 2.83%.
+
+These findings show an association between contract type and customer churn. They do not, by themselves, establish causation.
+
+## 📊 Visualizations
+
+### Churn by Contract Type
+
+![Churn by Contract](churn_by_contract.png)
+
+### Churn by Customer Tenure
+
+![Churn by Tenure](churn_by_tenure.png)
+
+### Customer Churn Distribution
+
+![Churn Distribution](churn_distribution.png)
+
+## 📁 Repository Structure
+
 ```text
 Customer-Churn-Analysis/
-├── Dataset/
-│   └── Customer-Churn.csv
 ├── SQL/
 │   └── churn_analysis.sql
-├── Python/
-│   ├── customer_churn_analysis.py
-│   └── outputs/                 # Created when the script runs
-├── Screenshots/
+├── Customer-Churn.csv
+├── customer_churn_analysis.py
+├── churn_analysis.sql
+├── churn_by_contract.png
+├── churn_by_tenure.png
+├── churn_distribution.png
 ├── requirements.txt
 └── README.md
 ```
 
-## Run the Python Analysis
-Open a terminal in the project root and run:
+## ⚙️ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/piyushparatwar33/Customer-Churn-Analysis.git
+cd Customer-Churn-Analysis
+```
+
+### 2. Install dependencies
 
 ```bash
 python -m pip install -r requirements.txt
-python Python/customer_churn_analysis.py
 ```
 
-The script saves cleaned data, summary CSVs, and charts to `Python/outputs/`.
+### 3. Run the Python analysis
 
-## PostgreSQL Setup
-1. Create a PostgreSQL database.
-2. Import the CSV into a table named `customer_churn`.
-3. Check that the column names match the SQL file. The provided queries use quoted mixed-case column names such as `"Churn"` and `"Contract"`.
-4. Run the queries in `SQL/churn_analysis.sql`.
+```bash
+python customer_churn_analysis.py
+```
 
-## Key Metrics
-The Python script calculates total customers, churned customers, retained customers, churn rate, churn by contract, churn by payment method, average monthly charges by churn status, and churn by tenure group.
+The analysis generates cleaned data, summary CSV files, and visualizations in the `Python/outputs/` folder when run from the original project structure. If you place the Python script in the repository root, adjust its paths accordingly.
 
-## Notes
-- `TotalCharges` is converted to numeric; blank or invalid values become missing values.
-- The analysis is descriptive and does not claim to predict future churn.
-- Add screenshots of your executed charts/dashboard to `Screenshots/` after running the project.
+### 4. Run SQL analysis
 
-## Author
-Piyush Paratwar
+Import the CSV into PostgreSQL as a table named `customer_churn`, then execute the queries in `SQL/churn_analysis.sql`.
+
+## 💡 Business Recommendations
+
+* Review the customer experience for month-to-month subscribers.
+* Investigate early-tenure churn and onboarding issues.
+* Evaluate retention offers using customer behavior and profitability data.
+* Monitor churn rate regularly to assess retention initiatives.
+
+## 👨‍💻 Author
+
+**Piyush Paratwar**
+
+GitHub: [piyushparatwar33](https://github.com/piyushparatwar33)
